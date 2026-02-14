@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 
 const TicTacToeContext = createContext(null);
 const TURN_TIME_SECONDS = 5;
@@ -34,6 +34,14 @@ export function TicTacToeProvider({ children }) {
   const showRoundOverModal = !!roundWinner || roundDraw;
   const isGameActive = !roundWinner && !roundDraw;
 
+  const jumpToStep = useCallback(
+    (step) => {
+      setCurrentStep(step);
+      setTimeRemaining(TURN_TIME_SECONDS);
+    },
+    []
+  );
+
   useEffect(() => {
     if (!isGameActive) return;
     if (timeRemaining <= 0) {
@@ -46,16 +54,18 @@ export function TicTacToeProvider({ children }) {
     }
     const id = setInterval(() => setTimeRemaining((t) => t - 1), 1000);
     return () => clearInterval(id);
-  }, [currentStep, isGameActive, timeRemaining]);
+  }, [currentStep, history, isGameActive, squares, timeRemaining]);
 
-  function jumpToStep(step) {
-    setCurrentStep(step);
-    if (step < history.length - 1) {
-      setRoundWinner(null);
-      setRoundDraw(false);
-    }
-    setTimeRemaining(TURN_TIME_SECONDS);
-  }
+  const jumpToStepWithReset = useCallback(
+    (step) => {
+      jumpToStep(step);
+      if (step < history.length - 1) {
+        setRoundWinner(null);
+        setRoundDraw(false);
+      }
+    },
+    [history.length, jumpToStep]
+  );
 
   const actions = useMemo(
     () => ({
@@ -67,9 +77,9 @@ export function TicTacToeProvider({ children }) {
         setTimeRemaining(TURN_TIME_SECONDS);
       },
       handleUndo() {
-        if (currentStep > 0) jumpToStep(currentStep - 1);
+        if (currentStep > 0) jumpToStepWithReset(currentStep - 1);
       },
-      jumpToStep,
+      jumpToStep: jumpToStepWithReset,
       handleWin(winner) {
         if (winner === 'X') setScoreX((s) => s + 1);
         else if (winner === 'O') setScoreO((s) => s + 1);
@@ -101,7 +111,7 @@ export function TicTacToeProvider({ children }) {
       setPlayer1Name,
       setPlayer2Name,
     }),
-    [history, currentStep]
+    [history, currentStep, jumpToStepWithReset]
   );
 
   const value = useMemo(
