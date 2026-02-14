@@ -1,0 +1,135 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: overlay-fade 0.2s ease-out;
+}
+
+@keyframes overlay-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background: var(--modal-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 24px;
+  padding: 2rem 2.5rem;
+  max-width: 360px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+  animation: modal-slide 0.3s ease-out;
+}
+
+@keyframes modal-slide {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-title {
+  font-family: 'Dancing Script', 'Brush Script MT', cursive;
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem;
+}
+
+.modal-subtext {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin: 0 0 1.25rem;
+}
+
+.modal-scores {
+  color: var(--text-primary);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-scores p {
+  margin: 0.25rem 0;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.modal-btn {
+  flex: 1;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  transition: all 0.15s ease;
+}
+
+.modal-btn:hover {
+  transform: translateY(-2px);
+}
+
+.modal-btn:active {
+  transform: translateY(2px);
+}
+
+.modal-btn--continue {
+  background: linear-gradient(180deg, #facc15 0%, #eab308 40%, #ca8a04 100%);
+  color: #1a1a1a;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.35) inset,
+    0 4px 0 rgba(160, 120, 0, 0.4),
+    0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modal-btn--continue:hover {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.4) inset,
+    0 6px 0 rgba(160, 120, 0, 0.35),
+    0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.modal-btn--continue:active {
+  box-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.2) inset,
+    0 2px 0 rgba(160, 120, 0, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-btn--restart {
+  background: linear-gradient(180deg, #c084fc 0%, #a855f7 40%, #9333ea 100%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.25) inset,
+    0 4px 0 rgba(100, 50, 150, 0.4),
+    0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modal-btn--restart:hover {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.35) inset,
+    0 6px 0 rgba(100, 50, 150, 0.35),
+    0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.modal-btn--restart:active {
+  box-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.2) inset,
+    0 2px 0 rgba(100, 50, 150, 0.35),
+    0 2px 8px rgba(0, 0, 0, 0.2);
+}

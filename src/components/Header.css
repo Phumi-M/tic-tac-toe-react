@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+.header-logo {
+  width: 48px;
+  height: 48px;
+  filter: var(--logo-filter);
+}
+
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: var(--toggle-bg);
+  cursor: pointer;
+  color: var(--toggle-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05) inset, 0 2px 0 rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.15s ease;
+}
+
+.theme-toggle:hover {
+  background: var(--toggle-bg);
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08) inset, 0 3px 0 rgba(0, 0, 0, 0.15), 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15) inset, 0 1px 0 rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2);
+}

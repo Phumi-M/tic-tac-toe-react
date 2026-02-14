@@ -1,0 +1,48 @@
+.move-history {
+  padding: 1rem;
+  background: var(--bg-card);
+  border-radius: 12px;
+  min-width: 180px;
+}
+
+.move-history-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.75rem;
+}
+
+.move-history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.move-history-list li {
+  margin-bottom: 0.35rem;
+}
+
+.move-history-btn {
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.85rem;
+  text-align: left;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.move-history-btn:hover:not(:disabled) {
+  background: var(--toggle-bg);
+  color: var(--text-primary);
+}
+
+.move-history-btn--current {
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--toggle-bg);
+  cursor: default;
+}

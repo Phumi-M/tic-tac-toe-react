@@ -1,0 +1,48 @@
+.square {
+  width: 90px;
+  height: 90px;
+  font-size: 2.25rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  background: var(--square-bg);
+  color: var(--text-primary);
+  cursor: pointer;
+  border-top: 1px solid var(--square-border);
+  box-shadow: var(--square-shadow);
+  transition: all 0.15s ease;
+}
+
+.square:hover:not(:disabled) {
+  background: var(--square-bg-hover);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 5px 0 rgba(0, 0, 0, 0.25), 0 8px 16px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+.square:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2) inset, 0 1px 0 rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.square:focus-visible {
+  outline: 2px solid #eab308;
+  outline-offset: 2px;
+}
+
+.square:disabled {
+  cursor: default;
+}
+
+.square--winning {
+  background: linear-gradient(180deg, #facc15 0%, #eab308 50%, #ca8a04 100%);
+  color: #1a1a1a;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 4px 0 rgba(180, 130, 0, 0.5), 0 6px 20px rgba(234, 179, 8, 0.4);
+  animation: winning-pulse 0.6s ease-out;
+}
+
+@keyframes winning-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}

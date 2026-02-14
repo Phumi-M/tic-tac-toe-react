@@ -1,0 +1,104 @@
+.board-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: var(--bg-card);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+  min-height: 1.5em;
+}
+
+.status {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.turn-timer {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 0.25rem 0.5rem;
+  background: var(--bg-card);
+  border-radius: 8px;
+  min-width: 3.5rem;
+  text-align: center;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.board-row {
+  display: flex;
+  gap: 6px;
+}
+
+.board-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.undo-btn {
+  padding: 0.65rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  background: var(--btn-bg);
+  color: var(--text-primary);
+  cursor: pointer;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 4px 0 rgba(0, 0, 0, 0.25), 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.15s ease;
+}
+
+.undo-btn:hover {
+  background: var(--btn-bg-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 6px 0 rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.undo-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2) inset, 0 2px 0 rgba(0, 0, 0, 0.2), 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.restart-btn {
+  padding: 0.65rem 1.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  background: var(--btn-bg);
+  color: var(--text-primary);
+  cursor: pointer;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 4px 0 rgba(0, 0, 0, 0.25), 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.15s ease;
+}
+
+.restart-btn:hover {
+  background: var(--btn-bg-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 6px 0 rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.restart-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2) inset, 0 2px 0 rgba(0, 0, 0, 0.2), 0 2px 8px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,21 @@
+.game-layout {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+}
+
+.game-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.game-center {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}

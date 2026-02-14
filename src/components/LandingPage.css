@@ -1,0 +1,96 @@
+.landing-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.landing-theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: var(--toggle-bg);
+  color: var(--toggle-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.15s ease;
+}
+
+.landing-theme-toggle:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.landing-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.landing-logo {
+  width: 120px;
+  height: 120px;
+  filter: var(--logo-filter);
+  opacity: 0.95;
+}
+
+.landing-title {
+  font-family: 'Dancing Script', 'Brush Script MT', cursive;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.landing-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.landing-play-btn {
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #facc15 0%, #eab308 40%, #ca8a04 100%);
+  color: #1a1a1a;
+  cursor: pointer;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.35) inset,
+    0 6px 0 rgba(180, 130, 0, 0.5),
+    0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.landing-play-btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.4) inset,
+    0 8px 0 rgba(180, 130, 0, 0.45),
+    0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.landing-play-btn:active {
+  transform: translateY(2px);
+  box-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.2) inset,
+    0 2px 0 rgba(180, 130, 0, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.25);
+}
